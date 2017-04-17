@@ -4,6 +4,8 @@ import moment from 'moment'
 import Util from './util/util'
 import State from './util/state'
 import Nav from './ui/nav'
+import Menus from './components/menus'
+import Modals from './components/modals'
 
 // -----------------
 // Soft Preload
@@ -30,6 +32,7 @@ $(window).on('load', () => {
 // Initialize App
 // -----------------
 function initialize() {
+  //check localStorage for info
   const currentUser = Util.LS('get', {key:'jdc'})
   const LSMessage = currentUser === null ? 'no local storage data found' : 'loaded local storage data:'
   console.log('-> App initialized - ' + LSMessage)
@@ -39,4 +42,9 @@ function initialize() {
   } else {
     console.log(currentUser)
   }
+
+  //kick off page components with info
+  Menus.init()
+  Modals.init()
+
 }

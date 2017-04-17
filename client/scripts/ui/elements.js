@@ -5,12 +5,11 @@ const UIEle = {}
 UIEle.nav = $('.jdc-nav')
 UIEle.navLink_li = $('.jdc-nav__link')
 UIEle.navLink_a = $('.jdc-nav__link a')
+UIEle.navIcon_li = $('.jdc-nav__icon')
 
 // Menus
-UIEle.navLinkSettings = $('.jdc-nav__icon--settings-link')
-UIEle.navLinkMessages = $('.jdc-nav__icon--messages-link')
-UIEle.menuSettings = $('.menu-settings')
-UIEle.menuMessages = $('.menu-messages')
+UIEle.menuLink = $('[data-open-menu]')
+UIEle.menu = $('[data-menu]')
 
 // Components
 UIEle.loader = $('.jdc-loader')

@@ -4,12 +4,24 @@
     </footer>
 
     <!-- Modals -->
-    <div class="jdc-modal"></div>
+    <div class="jdc-modal" data-modal="test">
+      <div class="jdc-modal__body">
+        yo it's a modal!
+      </div>
+    </div>
 
     <!-- Menus -->
-    <ul class="menu-right menu-settings"><!-- settings -->
+    <div class="menu-right menu-right--padded" data-menu="login"><!-- login -->
+      <form class="jdc-form">
+        <input type="text" id="login-email" placeholder="Email" />
+        <input type="password" id="login-password" placeholder="Password" />
+        <input type="submit" id="login-submit" value="Log In" />
+      </form>
+    </div>
+
+    <ul class="menu-right" data-menu="user"><!-- user -->
       <li class="menu-right__item">
-        <a href="#setting">Setting 1</a>
+        <a href="#setting" data-open-menu="login">Login</a>
       </li>
       <li class="menu-right__item">
         <a href="#setting">Setting 2</a>
@@ -19,7 +31,7 @@
       </li>
     </ul>
 
-    <ul class="menu-right menu-right--full menu-messages"><!-- messages -->
+    <ul class="menu-right menu-right--full" data-menu="messages"><!-- messages -->
       <li class="menu-right__item">
         <a href="#message">Message 1</a>
       </li>

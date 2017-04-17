@@ -32,10 +32,7 @@ body.theme-default {
   //----------------
   .jdc-nav { background: @default-blue; }
   .jdc-nav__link, .jdc-nav__icon { color:@white; }
-  .jdc-nav__link--active {
-    border-color:@default-blue-light;
-   }
-   .jdc-nav__icon--active {  }
+  .jdc-nav__link--active { border-color:@default-blue-light; }
 
   //----------------
   // Components
@@ -51,14 +48,19 @@ body.theme-default {
     border-left-color: @default-blue;
   }
   .jdc-loader__message {
-    color:@default-gray;
+    color:@default-blue-light;
   }
 
   //Error
   .jdc-error {}
 
   //Modal
-  .jdc-modal {}
+  .jdc-modal {
+    background:rgba(255,255,255,.75);
+  }
+  .jdc-modal__body {
+    background:@white;
+  }
 
   //----------------
   // Page Structure
@@ -66,6 +68,15 @@ body.theme-default {
   //Global
   .block-full {
     background:@off-white;
+  }
+
+  //Forms
+  .jdc-form input {
+    border-color:@default-blue;
+  }
+  .jdc-form input[type=submit] {
+    color:@white;
+    background:@default-blue-light;
   }
 
   //Menus
