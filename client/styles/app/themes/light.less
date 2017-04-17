@@ -1,0 +1,77 @@
+/*
+  Default Theme
+*/
+
+// Colors
+@default-light: #dadada;
+@default-dark: #1a1a1a;
+@default-gray: #aaa;
+
+@default-blue:#1d7ff7;
+@default-blue-light:#62a7fc;
+@default-blue-rgba:rgba(29,127,247, 0.2);
+
+@default-error: #c41d1d;
+@default-success: #135e35;
+@default-info: #5e4013;
+
+@white: #fff;
+@off-white: #fafafa;
+@black: #000;
+
+// Default Theme
+body.theme-default {
+  //----------------
+  // Base
+  //----------------
+  background:@default-light;
+  color:@default-dark;
+
+  //----------------
+  // Nav
+  //----------------
+  .jdc-nav { background: @default-blue; }
+  .jdc-nav__link, .jdc-nav__icon { color:@white; }
+  .jdc-nav__link--active {
+    border-color:@default-blue-light;
+   }
+   .jdc-nav__icon--active {  }
+
+  //----------------
+  // Components
+  //----------------
+  //Loader
+  .jdc-loader {
+    background:rgba(255,255,255,.85);
+  }
+  .jdc-loader__spinner {
+    border-top-color: @default-blue-rgba;
+    border-right-color: @default-blue-rgba;
+    border-bottom-color: @default-blue-rgba;
+    border-left-color: @default-blue;
+  }
+  .jdc-loader__message {
+    color:@default-gray;
+  }
+
+  //Error
+  .jdc-error {}
+
+  //Modal
+  .jdc-modal {}
+
+  //----------------
+  // Page Structure
+  //----------------
+  //Global
+  .block-full {
+    background:@off-white;
+  }
+
+  //Home
+  .jdc-home {}
+
+  //Admin
+  .jdc-admin {}
+
+}

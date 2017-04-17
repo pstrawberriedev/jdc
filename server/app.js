@@ -12,6 +12,7 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 hbs.registerPartials(path.join(__dirname, 'views/partials'));
+hbs.registerPartials(path.join(__dirname, 'views/components'));
 
 // HBS Helpers
 //var helpers = require('./util/hbs-helpers');
