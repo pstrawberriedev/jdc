@@ -15,11 +15,6 @@ router.get('/projects', function(req, res, next) {
   res.render('projects', { title: 'Projects' });
 });
 
-/* GET personal page. */
-router.get('/personal', function(req, res, next) {
-  res.render('personal', { title: 'Personal' });
-});
-
 /* GET inspiration page. */
 router.get('/inspiration', function(req, res, next) {
   res.render('inspiration', { title: 'Inspiration' });
