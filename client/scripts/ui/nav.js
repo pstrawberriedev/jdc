@@ -25,7 +25,7 @@ const Nav = {
 
         // If the user has local data, pre-fill the login form
         const localData = Util.LS('get', {key:'jdc'})
-        if(localData.user.email) {
+        if(localData.user && localData.user.email) {
           UIEle.modalLoginEmail.val(localData.user.email)
           UIEle.modalLoginPassword.focus()
         }

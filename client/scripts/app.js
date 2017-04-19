@@ -51,4 +51,7 @@ function initialize() {
   //nav special page check
   Nav.getSpecialPage()
 
+  //attach firebase listeners
+  FB.attachListeners()
+
 }

@@ -1,3 +1,4 @@
+import Promise from 'bluebird'
 import * as firebase from 'firebase'
 import Util from '../util/util'
 import State from '../util/state'
@@ -5,6 +6,7 @@ import Modals from '../components/modals'
 import Alerts from '../components/alerts'
 import Errors from '../components/errors'
 import Admin from '../components/admin'
+import Render from '../ui/render'
 
 const FBconfig = {
   apiKey: "AIzaSyCAa9u5A4jVbyHSrX0_jzhQug3t0uIrABI",
@@ -39,23 +41,45 @@ const FB = {
   getCurrentUser() {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
-        return user.email
+        return user
       } else {
         return false
       }
     })
   },
 
-  setThought(uid, text, picture) {
-    let newThought = {
-      uid: Util.uid(),
-      date: Util.unixTimestamp(),
-      text: text
-    }
-    if(picture) {
-      newThought.picture = picture
-    }
-    firebase.database().ref('thoughts/' + newThought.uid).set(newThought)
+  newThought(text, picture) {
+    return new Promise(function(resolve, reject) {
+
+      Util.loader({show:true, message:'Adding thought'})
+      let newThought = {
+        text: text
+      }
+      if(picture) {
+        newThought.picture = picture
+      }
+      firebase.database().ref('thoughts/' + Util.unixTimestamp()).set(newThought)
+      .then(function() {
+        Util.loader({show:false})
+        resolve()
+      })
+      .catch(function(error) {
+        Util.loader({show:false})
+        Errors.showError(error.message)
+        reject(
+          new Error(error.message)
+        )
+      })
+
+    })
+  },
+
+  attachListeners() {
+    // Thoughts
+    const thoughtsRef = firebase.database().ref('thoughts/')
+    thoughtsRef.once('value', function(snapshot) {
+      Render.renderThoughts(snapshot.val())
+    })
   }
 
 }
