@@ -1,5 +1,6 @@
 import Promise from 'bluebird'
-import $ from 'jquery'
+import uuidV1 from 'uuid/v1'
+import moment from 'moment'
 import UIEle from '../ui/elements'
 import State from './state'
 
@@ -39,8 +40,12 @@ const Util = {
     }
   },
 
-  modal(options) {
+  uid() {
+    return uuidV1()
+  },
 
+  unixTimestamp() {
+    return moment().unix()
   }
 
 }

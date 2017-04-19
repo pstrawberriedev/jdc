@@ -16,4 +16,26 @@
   </head>
   <body class="theme-default{{#if bodyClass}} page-{{bodyClass}}{{/if}}">
 
-    {{> nav}}
+    {{#if isAdmin}}
+      {{> nav_admin}}
+    {{else}}
+      {{> nav}}
+    {{/if}}
+
+    <div class="default-alert">
+      <div class="jdc-alert">
+        <div class="block-full__wrapper">
+          <span class="jdc-alert__icon icon-emoji-happy"></span>
+          <div class="jdc-alert__text"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="default-error">
+      <div class="jdc-error">
+        <div class="block-full__wrapper">
+          <span class="jdc-error__icon icon-emoji-sad"></span>
+          <div class="jdc-error__text"></div>
+        </div>
+      </div>
+    </div>

@@ -32,7 +32,10 @@ router.get('/contact', function(req, res, next) {
 
 /* GET admin page. */
 router.get('/admin', function(req, res, next) {
-  res.render('admin', { title: 'Admin' });
+  res.render('admin', {
+    title: 'Admin',
+    isAdmin: true
+  });
 });
 
 // -----------------

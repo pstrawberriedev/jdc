@@ -6,8 +6,8 @@
     <!-- Modals -->
     <div class="jdc-modal" data-modal="login">
       <div class="jdc-modal__body">
-        <form class="jdc-form">
-          <input type="text" id="login-email" placeholder="Email" />
+        <form class="jdc-form" id="login-form">
+          <input type="email" id="login-email" placeholder="Email" />
           <input type="password" id="login-password" placeholder="Password" />
           <input type="submit" id="login-submit" value="Log In" />
         </form>
@@ -15,24 +15,15 @@
     </div>
 
     <!-- Menus -->
-    <ul class="menu-right" data-menu="settings"><!-- user -->
+    <ul class="menu-right menu-right--full" data-menu="admin"><!-- admin -->
       <li class="menu-right__item">
-        <a href="#setting">Setting 1</a>
+        <a href="#admin">Admin 1</a>
       </li>
       <li class="menu-right__item">
-        <a href="#setting">Setting 2</a>
-      </li>
-    </ul>
-
-    <ul class="menu-right menu-right--full" data-menu="favorites"><!-- messages -->
-      <li class="menu-right__item">
-        <a href="#message">Fav 1</a>
+        <a href="#admin">Admin 2</a>
       </li>
       <li class="menu-right__item">
-        <a href="#setting">Fav 2</a>
-      </li>
-      <li class="menu-right__item">
-        <a href="#setting">Fav 3</a>
+        <a href="#admin">Admin 3</a>
       </li>
     </ul>
 

@@ -32,7 +32,7 @@ body.theme-default {
   //----------------
   .jdc-nav { background: @default-blue; }
   .jdc-nav__link, .jdc-nav__icon { color:@white; }
-  .jdc-nav__link--active { border-color:@default-blue-light; }
+  .jdc-nav__link--active { border-color:@white; }
 
   //----------------
   // Components
@@ -51,8 +51,17 @@ body.theme-default {
     color:@default-blue-light;
   }
 
+  //Alert
+  .jdc-alert {
+    background:@default-blue-light;
+    color:@white;
+  }
+
   //Error
-  .jdc-error {}
+  .jdc-error {
+    background:@default-error;
+    color:@white;
+  }
 
   //Modal
   .jdc-modal {
@@ -66,13 +75,16 @@ body.theme-default {
   // Page Structure
   //----------------
   //Global
-  .block-full {
+  .block-full--white {
     background:@off-white;
   }
 
   //Forms
   .jdc-form input {
     border-color:@default-blue;
+  }
+  .jdc-form textarea {
+    border-color:@default-blue-light;
   }
   .jdc-form input[type=submit] {
     color:@white;
@@ -91,6 +103,12 @@ body.theme-default {
   }
   .menu-messages {
 
+  }
+
+  //Cards
+  .card-delete {
+    background:@white;
+    color:@default-error;
   }
 
   //Home

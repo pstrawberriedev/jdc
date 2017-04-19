@@ -6,6 +6,7 @@ import State from './util/state'
 import Nav from './ui/nav'
 import Menus from './components/menus'
 import Modals from './components/modals'
+import FB from './firebase/firebase'
 
 // -----------------
 // Soft Preload
@@ -43,8 +44,11 @@ function initialize() {
     console.log(currentUser)
   }
 
-  //kick off page components with info
+  //initialize off page components
   Menus.init()
   Modals.init()
+
+  //nav special page check
+  Nav.getSpecialPage()
 
 }

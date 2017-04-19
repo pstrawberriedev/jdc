@@ -49,6 +49,12 @@ const Menus = {
 
   },
 
+  openMenu(name) {
+    Menus.currentMenu = name
+    $('[data-menu="' + name + '"]').addClass('menu-open')
+    $('[data-menu="' + name + '"]').show()
+  },
+
   closeMenus() {
     $('[data-menu]').removeClass('menu-open')
     $('[data-menu]').hide()

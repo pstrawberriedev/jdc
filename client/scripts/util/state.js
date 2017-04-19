@@ -1,4 +1,5 @@
 import Util from './util'
+import moment from 'moment'
 
 let State = {
 
@@ -12,7 +13,7 @@ let State = {
       }
       if(key && value) {
         currentState[key] = value
-        console.log('Local State "' + key + '" changed to "' + value + '"')
+        console.log('Local State "' + key + '" updated')
         Util.LS('set', {key:'jdc', value:currentState})
         resolve()
       } else {
@@ -25,10 +26,10 @@ let State = {
 
   newState() {
     return new Promise((resolve, reject) => {
+      let newMoment = moment()
+      newMoment = newMoment.format('MMM-DD-YYYY hh:mm a')
       const currentState = {
-        modals:[],
-        alerts:[],
-        errors:[]
+        created: newMoment
       }
       Util.LS('set', {key:'jdc', value:currentState})
       console.log('-> Created new local storage State for josh.care')
