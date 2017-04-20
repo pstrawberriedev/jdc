@@ -1,0 +1,32 @@
+.jdc-index {
+  .block;.relative;.clearfix;
+
+    .card-delete {display:none!important;}
+}
+
+.jdc-index-left {
+  .fixed;.block;
+  left:0;top:60px;bottom:0;
+  width:33.333%;
+}
+
+.jdc-index-left__wrapper {
+  .absolute;.block;
+  bottom:0;top:0;left:0;
+  width:100%;
+  overflow-y:auto;
+  overflow-x:hidden;
+}
+
+// MQ
+@media(min-width:1180px) {
+  .jdc-index-left {
+    width:20%;
+  }
+}
+@media(max-width:830px) {
+  .jdc-index-left {
+    width:80%;
+    display:none;
+  }
+}

@@ -75,10 +75,12 @@ const FB = {
   },
 
   attachListeners() {
+    Util.loader({show:true,message:'Getting content'})
     // Thoughts
     const thoughtsRef = firebase.database().ref('thoughts/')
     thoughtsRef.on('value', function(snapshot) {
       Render.renderThoughts(snapshot.val())
+      Util.loader({show:false})
     })
   }
 
