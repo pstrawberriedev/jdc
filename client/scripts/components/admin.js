@@ -15,6 +15,7 @@ const Admin = {
 
   registerThoughts() {
 
+    // Add thought
     UIEle.admin_thoughtForm.on('submit', function(e) {
       e.preventDefault()
       if(UIEle.admin_thoughtText.val() != '' && isLength(UIEle.admin_thoughtText.val(), {min:2,max:250})) {

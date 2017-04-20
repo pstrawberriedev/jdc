@@ -39,13 +39,7 @@ const FB = {
   },
 
   getCurrentUser() {
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-        return user
-      } else {
-        return false
-      }
-    })
+    return firebase.auth().currentUser
   },
 
   newThought(text, picture) {
@@ -59,6 +53,26 @@ const FB = {
         newThought.picture = picture
       }
       firebase.database().ref('thoughts/' + Util.unixTimestamp()).set(newThought)
+      .then(function() {
+        Util.loader({show:false})
+        resolve()
+      })
+      .catch(function(error) {
+        Util.loader({show:false})
+        Errors.showError(error.message)
+        reject(
+          new Error(error.message)
+        )
+      })
+
+    })
+  },
+
+  deleteThought(thoughtID) {
+    return new Promise(function(resolve, reject) {
+
+      Util.loader({show:true, message:'Deleting thought'})
+      firebase.database().ref('thoughts/' + thoughtID).remove()
       .then(function() {
         Util.loader({show:false})
         resolve()

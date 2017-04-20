@@ -48,7 +48,7 @@ function initialize() {
   Menus.init()
   Modals.init()
 
-  //nav special page check
+  //nav special page check (currently for admin)
   Nav.getSpecialPage()
 
   //attach firebase listeners

@@ -37,5 +37,6 @@ UIEle.admin_thoughtSubmit = $('#admin-thoughts-submit')
 // ++
 // Thoughts
 UIEle.thoughts_container = $('.jdc-thoughts')
+UIEle.thoughts_thought = $('[data-date]')
 
 export default UIEle
