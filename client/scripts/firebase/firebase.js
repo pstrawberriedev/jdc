@@ -77,7 +77,7 @@ const FB = {
   attachListeners() {
     // Thoughts
     const thoughtsRef = firebase.database().ref('thoughts/')
-    thoughtsRef.once('value', function(snapshot) {
+    thoughtsRef.on('value', function(snapshot) {
       Render.renderThoughts(snapshot.val())
     })
   }

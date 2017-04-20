@@ -34,4 +34,8 @@ UIEle.admin_thoughtForm = $('#admin-thoughts')
 UIEle.admin_thoughtText = $('#admin-thoughts-text')
 UIEle.admin_thoughtSubmit = $('#admin-thoughts-submit')
 
+// ++
+// Thoughts
+UIEle.thoughts_container = $('.jdc-thoughts')
+
 export default UIEle

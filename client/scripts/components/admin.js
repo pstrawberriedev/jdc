@@ -21,6 +21,7 @@ const Admin = {
         FB.newThought(UIEle.admin_thoughtText.val())
         .then(() => {
           Alerts.showAlert('Added new thought')
+          UIEle.admin_thoughtText.val('')
         })
       } else {
         const appendClass = '[data-modal="login"] .jdc-modal__body'
